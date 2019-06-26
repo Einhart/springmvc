@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 映射器和适配器是可以不用明显的定义出来的，他们都有m默认的配置 -->
+	<!-- 
+		映射器默认为BeanNameUrlHandlerMapping
+		适配器默认为SimpleControllerHandlerAdapter
+	 -->
+	 
+	 <bean id="/uc.do" class="com.woniu.c_default.UserController" />
+	 
+	 <!-- 但是视图解析器还是要配置 -->
+	 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	 	<property name="prefix" value="/"/>
+	 	<property name="suffix" value=".jsp"/>
+	 </bean> 
+
+</beans>
